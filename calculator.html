@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f7fa; /* Light neutral background */
+        }
+        .calculator {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+        .display {
+            background-color: #2d2d2d;
+            color: #ffffff;
+            text-align: right;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 24px;
+            height: 50px;
+            overflow-x: auto;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .btn {
+            background-color: #f0f0f0;
+            border: none;
+            padding: 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #e6e6e6;
+        }
+        .operator {
+            background-color: #6c757d; /* Subtle dark gray */
+            color: #ffffff;
+        }
+        .operator:hover {
+            background-color: #5a6268; /* Slightly darker gray */
+        }
+        .clear {
+            background-color: #f9c74f; /* Warm yellow for clear */
+            color: white;
+        }
+        .clear:hover {
+            background-color: #f8b739; /* Slightly darker yellow */
+        }
+        .equals {
+            background-color: #007bff; /* Calm blue for equals */
+            color: white;
+            font-size: 28px; /* Bigger font size for visibility */
+            padding: 15px 0; /* Reduced height by adjusting vertical padding */
+            grid-column: span 4; /* The equals button spans across 4 columns */
+            text-align: center; /* Center the text */
+        }
+        .equals:hover {
+            background-color: #0056b3; /* Slightly darker blue */
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="btn" onclick="appendValue('7')">7</button>
+            <button class="btn" onclick="appendValue('8')">8</button>
+            <button class="btn" onclick="appendValue('9')">9</button>
+            <button class="btn operator" onclick="appendValue('/')">/</button>
+
+            <button class="btn" onclick="appendValue('4')">4</button>
+            <button class="btn" onclick="appendValue('5')">5</button>
+            <button class="btn" onclick="appendValue('6')">6</button>
+            <button class="btn operator" onclick="appendValue('*')">*</button>
+
+            <button class="btn" onclick="appendValue('1')">1</button>
+            <button class="btn" onclick="appendValue('2')">2</button>
+            <button class="btn" onclick="appendValue('3')">3</button>
+            <button class="btn operator" onclick="appendValue('-')">-</button>
+
+            <button class="btn" onclick="appendValue('0')">0</button>
+            <button class="btn" onclick="appendValue('.')">.</button>
+            <button class="btn clear" onclick="clearDisplay()">C</button>
+            <button class="btn operator" onclick="appendValue('+')">+</button>
+
+            <button class="btn equals" onclick="calculate()">=</button> <!-- Equals button with reduced height -->
+        </div>
+    </div>
+    <script>
+        const display = document.getElementById("display");
+
+        function appendValue(value) {
+            if (display.textContent === "0") {
+                display.textContent = value;
+            } else {
+                display.textContent += value;
+            }
+        }
+
+        function clearDisplay() {
+            display.textContent = "0";
+        }
+
+        function calculate() {
+            try {
+                display.textContent = eval(display.textContent); // Evaluate the expression
+            } catch {
+                display.textContent = "Error";
+            }
+        }
+    </script>
+</body>
+</html>

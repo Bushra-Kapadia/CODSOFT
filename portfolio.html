@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Bushra Kapadia</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            animation: fadeInDown 1s ease;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        nav {
+            margin-top: 20px;
+            animation: slideIn 2s ease;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffe6d3;
+        }
+
+        section {
+            padding: 50px 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            border-bottom: 3px solid #feb47b;
+            display: inline-block;
+        }
+
+        #about {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .profile-pic {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border: 4px solid #feb47b;
+        }
+
+        .about-description {
+            max-width: 600px;
+        }
+
+        .about-description p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        #skills {
+            margin-top: 40px;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            width: 200px;
+            height: 250px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .skill-card i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+    
+        #projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        #projects h2 {
+            width: 100%;
+            margin-bottom: 20px; 
+            text-align: center;  
+            border-bottom: none;
+            
+        }
+
+        .project-card {
+            background: #282828;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 350px; 
+            animation: fadeInUp 1s ease;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .project-card h3 {
+            margin-top: 15px;
+        }
+
+        .project-card p {
+            color: #d3d3d3;
+        }
+
+        #resume {
+            margin-top: 40px;
+        }
+
+        #resume a {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        #resume a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        #contact {
+            margin-top: 30px;
+            padding: 30px 10px;
+            border-radius: 10px;
+            color: #fff;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #feb47b;
+            display: inline-block;
+        }
+
+        #contact p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        #contact div p {
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        #contact a {
+            color: #ff7e5f;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        #contact a:hover {
+             color: #ffe6d3;
+        }
+
+       
+        footer {
+            background: #282828;
+            padding: 15px 0;
+            text-align: center;
+            color: #d3d3d3;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ff7e5f;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bushra Kapadia</h1>
+        <p>Web Developer | Creative Artist </p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#resume">Resume</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <img src="C:\Users\HP\Downloads\0_IMG_4429.JPG" alt="Bushra Kapadia's Photo" class="profile-pic">
+        <div class="about-description">
+            <h2>About Me</h2>
+            <p>Hello! I'm Bushra Kapadia, a passionate web developer skilled in creating user-friendly websites with HTML, CSS, and JavaScript. I love bringing ideas to life through interactive and visually appealing designs.</p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <div class="skill-card">
+                <i class="fas fa-code"></i>
+                <h3>HTML</h3>
+                <p>Structuring the web with clean code.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-css3-alt"></i>
+                <h3>CSS</h3>
+                <p>Styling websites with elegance.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-js"></i>
+                <h3>JavaScript</h3>
+                <p>Adding life to web interactions.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Responsive Design</h3>
+                <p>Ensuring accessibility on all devices.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-card"><br>
+            <img src="C:\Users\HP\Pictures\Screenshots\Screenshot 2024-09-28 201306.png" alt="Project 1">
+            <h3>Pet-Friendly Guide</h3>
+            <p>A one-stop platform for pet owners to discover pet-friendly locations and services.</p>
+        </div>
+        <div class="project-card">
+            <img src="C:\Users\HP\Pictures\Screenshots\Screenshot 2024-11-29 210158.png" alt="Project 2">
+            <h3>McCaffeine Skincare - The Coffee Revolution</h3>
+            <p>A vibrant e-commerce website showcasing McCaffeine's skincare range, highlighting the benefits of caffeine in beauty products with a user-friendly shopping experience.</p>
+        </div>
+        <div class="project-card">
+            <img src="C:\Users\HP\Pictures\Screenshots\Screenshot 2024-11-29 210329.png" alt="Project 3">
+            <h3>Fitness Studio website</h3>
+            <p>A sleek website showcasing gym services, membership plans, and fitness schedules to inspire users to achieve their fitness goals.</p>
+        </div>
+    </section>
+
+    <section id="resume">
+        <h2>Resume</h2><br><br>
+        <a href="file:///C:/Users/HP/Documents/Bushra's%20Work/Resume.pdf" target="_blank">Download Resume</a>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>I'd love to hear from you! Feel free to reach out if you want to collaborate or have any questions.</p>
+        <div>
+            <p>Email: <a href="mailto:bushra@example.com">bushra.kapadia15@gmail.com</a></p>
+            <p>Phone Number: <a target="_blank">8657242554</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Designed and Developed by Bushra Kapadia</p>
+    </footer>
+</body>
+</html>
